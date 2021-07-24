@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { LighthouseFabContainerProps, LighthouseFabProps } from "./types";
 import styled from "styled-components";
 import GoogleLighthouseIconSvg from "../../assets/svg/lighthouse-logo.svg";
@@ -79,11 +79,72 @@ const LighthouseFabAnchor = styled.a`
 const LighthouseViewerBaseUrl =
   "https://googlechrome.github.io/lighthouse/viewer/?gist=";
 
+const LighthouseFabGistBaseUrl = "https://api.github.com/gists/";
+
+const getLighthouseReport = async (gistId: string) => {
+  const response = await fetch(LighthouseFabGistBaseUrl + gistId);
+  return response.json();
+};
+
+// Parse out scores from Lighthouse Report
+const parseLighthouseReportForScores = (lighthouseReport: any) => {
+  let scores: LighthouseScoresType = {
+    performance: 0,
+    accessibility: 0,
+    "best-practices": 0,
+    pwa: 0,
+    seo: 0,
+  };
+  for (const [key, value] of Object.entries(
+    JSON.parse(Object.values(lighthouseReport.files)[0].content).categories
+  )) {
+    scores[key] = value.score;
+  }
+  return scores;
+};
+
+interface LighthouseScoresType {
+  performance: number;
+  accessibility: number;
+  "best-practices": number;
+  seo: number;
+  pwa: number;
+}
+
 const LighthouseFab: FC<LighthouseFabProps> = ({ ...props }) => {
+  const [
+    lighthouseScores,
+    setLighthouseScores,
+  ] = React.useState<LighthouseScoresType>({
+    performance: 100,
+    accessibility: 100,
+    "best-practices": 100,
+    seo: 100,
+    pwa: 100,
+  });
+
+  // Get Lighthouse Report on component load
+  useEffect(() => {
+    console.log("Lighthouse Fab: Loading Lighthouse Report");
+    getLighthouseReport(props.gistId)
+      .then((lighthouseReport) => {
+        console.log(lighthouseReport);
+        setLighthouseScores(parseLighthouseReportForScores(lighthouseReport));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [props.gistId]);
+
   return (
-    <LighthouseFabContainer {...props}>
+    <LighthouseFabContainer
+      {...props}
+      score={
+        props.score !== undefined ? props.score : lighthouseScores.performance
+      }
+    >
       <LighthouseFabAnchor
-        href={LighthouseViewerBaseUrl + props.gist}
+        href={LighthouseViewerBaseUrl + props.gistId}
         target="_blank"
       >
         <LighthouseFabIcon src={GoogleLighthouseIconSvg}></LighthouseFabIcon>

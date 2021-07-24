@@ -4,13 +4,11 @@ import LighthouseFab from "../react-google-lighthouse-fab/LighthouseFab";
 export default {
   title: "components/LighthouseFab",
   component: LighthouseFab,
-  argTypes: {
-    gist: "",
-  },
+  argTypes: {},
 };
 
 const Template = (args) => (
-  <LighthouseFab {...args} gist="b83774d588570b936751fc2caddf2b33" />
+  <LighthouseFab {...args} gistId="b83774d588570b936751fc2caddf2b33" />
 );
 
 export const Primary = Template.bind({});
@@ -87,6 +85,23 @@ OrangeHover.args = {
 export const RedHover = Template.bind({});
 RedHover.args = {
   score: 48,
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
+
+export const GistLiveScoreGood = Template.bind({});
+GistLiveScoreGood.args = {
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
+
+export const GistLiveScoreBad = Template.bind({});
+GistLiveScoreBad.args = {
+  gistId: "ff2970b0d3d4ce55eefbd27370d613f2",
   size: "large",
   borderStyle: "solid",
   orientation: "right",

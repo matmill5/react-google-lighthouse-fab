@@ -10,5 +10,5 @@ export interface LighthouseFabContainerProps
 }
 
 export interface LighthouseFabProps extends LighthouseFabContainerProps {
-  gist: string; // gist id
+  gistId: string; // gist id
 }
