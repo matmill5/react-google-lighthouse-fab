@@ -7,9 +7,7 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => (
-  <LighthouseFab {...args} gistId="b83774d588570b936751fc2caddf2b33" />
-);
+const Template = (args) => <LighthouseFab {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -93,6 +91,7 @@ RedHover.args = {
 
 export const GistLiveScoreGood = Template.bind({});
 GistLiveScoreGood.args = {
+  gistId: "b83774d588570b936751fc2caddf2b33",
   size: "large",
   borderStyle: "solid",
   orientation: "right",
