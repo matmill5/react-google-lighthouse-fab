@@ -5,11 +5,13 @@ export default {
   title: "components/LighthouseFab",
   component: LighthouseFab,
   argTypes: {
-    reportSrc: "",
+    gist: "",
   },
 };
 
-const Template = (args) => <LighthouseFab {...args} />;
+const Template = (args) => (
+  <LighthouseFab {...args} gist="b83774d588570b936751fc2caddf2b33" />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -17,21 +19,76 @@ Primary.args = {
   label: "LighthouseFab",
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Small = Template.bind({});
+Small.args = {
+  size: "small",
+  label: "LighthouseFab",
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: "medium",
   label: "LighthouseFab",
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: "large",
-  reportSrc: "",
   label: "LighthouseFab",
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: "small",
-  reportSrc: "",
+export const SolidHover = Template.bind({});
+SolidHover.args = {
+  size: "large",
+  borderStyle: "solid",
+  label: "LighthouseFab",
+};
+
+export const DottedHover = Template.bind({});
+DottedHover.args = {
+  size: "large",
+  borderStyle: "dotted",
+  label: "LighthouseFab",
+};
+
+export const DashedHover = Template.bind({});
+DashedHover.args = {
+  size: "large",
+  borderStyle: "dashed",
+  label: "LighthouseFab",
+};
+
+export const LeftHover = Template.bind({});
+LeftHover.args = {
+  size: "large",
+  borderStyle: "solid",
+  orientation: "left",
+  label: "LighthouseFab",
+};
+
+export const GreenHover = Template.bind({});
+GreenHover.args = {
+  score: 91,
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
+
+export const OrangeHover = Template.bind({});
+OrangeHover.args = {
+  score: 80,
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
+
+export const RedHover = Template.bind({});
+RedHover.args = {
+  score: 48,
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
   label: "LighthouseFab",
 };
