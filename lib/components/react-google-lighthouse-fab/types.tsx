@@ -13,6 +13,12 @@ export interface ScoreTokenProps extends React.HTMLAttributes<HTMLDivElement> {
   score?: number;
 }
 
+export interface ScoreTokenBarContainerProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  visible?: boolean;
+}
+
 export interface LighthouseFabProps extends LighthouseFabContainerProps {
   gistId: string; // gist id
+  showScoreTokens?: boolean;
 }

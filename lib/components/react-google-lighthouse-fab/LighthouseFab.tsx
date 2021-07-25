@@ -2,6 +2,7 @@ import React, { FC, useEffect } from "react";
 import {
   LighthouseFabContainerProps,
   LighthouseFabProps,
+  ScoreTokenBarContainerProps,
   ScoreTokenProps,
 } from "./types";
 import styled from "styled-components";
@@ -58,13 +59,6 @@ const LighthouseFabContainer = styled.div<LighthouseFabContainerProps>`
   }
 `;
 
-// Default props
-LighthouseFabContainer.defaultProps = {
-  size: "medium",
-  orientation: "right",
-  borderStyle: "solid",
-};
-
 const LighthouseFabIcon = styled.img`
   width: 100%;
   height: 100%;
@@ -98,12 +92,15 @@ const ScoreTokenText = styled.p`
   text-align: center;
   vertical-align: middle;
   display: table-cell;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
 `;
 
-const ScoreTokenBarContainer = styled.div`
+const ScoreTokenBarContainer = styled.div<ScoreTokenBarContainerProps>`
   display: flex;
   justify-content: space-evenly;
   margin-top: 7px;
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};}
 `;
 
 const LighthouseViewerBaseUrl =
@@ -179,7 +176,7 @@ const LighthouseFab: FC<LighthouseFabProps> = ({ ...props }) => {
       >
         <LighthouseFabIcon src={GoogleLighthouseIconSvg}></LighthouseFabIcon>
       </LighthouseFabAnchor>
-      <ScoreTokenBarContainer>
+      <ScoreTokenBarContainer visible={props.showScoreTokens}>
         {Object.values(lighthouseScores).map((score) => {
           return (
             <ScoreToken score={score}>
@@ -190,6 +187,13 @@ const LighthouseFab: FC<LighthouseFabProps> = ({ ...props }) => {
       </ScoreTokenBarContainer>
     </LighthouseFabContainer>
   );
+};
+
+// Default props
+LighthouseFabContainer.defaultProps = {
+  size: "medium",
+  orientation: "right",
+  borderStyle: "solid",
 };
 
 export default LighthouseFab;

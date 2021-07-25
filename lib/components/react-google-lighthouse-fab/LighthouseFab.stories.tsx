@@ -106,3 +106,23 @@ GistLiveScoreBad.args = {
   orientation: "right",
   label: "LighthouseFab",
 };
+
+export const ShowTokenBarBad = Template.bind({});
+ShowTokenBarBad.args = {
+  showScoreTokens: true,
+  gistId: "ff2970b0d3d4ce55eefbd27370d613f2",
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
+
+export const ShowTokenBarGood = Template.bind({});
+ShowTokenBarGood.args = {
+  showScoreTokens: true,
+  gistId: "b83774d588570b936751fc2caddf2b33",
+  size: "large",
+  borderStyle: "solid",
+  orientation: "right",
+  label: "LighthouseFab",
+};
