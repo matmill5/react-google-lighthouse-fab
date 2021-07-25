@@ -1,5 +1,9 @@
 import React, { FC, useEffect } from "react";
-import { LighthouseFabContainerProps, LighthouseFabProps } from "./types";
+import {
+  LighthouseFabContainerProps,
+  LighthouseFabProps,
+  ScoreTokenProps,
+} from "./types";
 import styled from "styled-components";
 import GoogleLighthouseIconSvg from "../../assets/svg/lighthouse-logo.svg";
 
@@ -76,6 +80,32 @@ const LighthouseFabAnchor = styled.a`
   padding: 0px;
 `;
 
+const ScoreToken = styled.div<ScoreTokenProps>`
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 3px;
+  border: 2px solid;
+  border-color: ${(props) => handleScoreColor(props.score)};}
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  display: table-cell;
+`;
+
+const ScoreTokenText = styled.p`
+  padding: 0px;
+  font-size: 9px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+`;
+
+const ScoreTokenBarContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 7px;
+`;
+
 const LighthouseViewerBaseUrl =
   "https://googlechrome.github.io/lighthouse/viewer/?gist=";
 
@@ -98,7 +128,7 @@ const parseLighthouseReportForScores = (lighthouseReport: any) => {
   for (const [key, value] of Object.entries(
     JSON.parse(Object.values(lighthouseReport.files)[0].content).categories
   )) {
-    scores[key] = value.score;
+    scores[key] = value.score * 100;
   }
   return scores;
 };
@@ -149,6 +179,15 @@ const LighthouseFab: FC<LighthouseFabProps> = ({ ...props }) => {
       >
         <LighthouseFabIcon src={GoogleLighthouseIconSvg}></LighthouseFabIcon>
       </LighthouseFabAnchor>
+      <ScoreTokenBarContainer>
+        {Object.values(lighthouseScores).map((score) => {
+          return (
+            <ScoreToken score={score}>
+              <ScoreTokenText>{score}</ScoreTokenText>
+            </ScoreToken>
+          );
+        })}
+      </ScoreTokenBarContainer>
     </LighthouseFabContainer>
   );
 };

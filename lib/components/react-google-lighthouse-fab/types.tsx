@@ -9,6 +9,10 @@ export interface LighthouseFabContainerProps
   score?: number;
 }
 
+export interface ScoreTokenProps extends React.HTMLAttributes<HTMLDivElement> {
+  score?: number;
+}
+
 export interface LighthouseFabProps extends LighthouseFabContainerProps {
   gistId: string; // gist id
 }
