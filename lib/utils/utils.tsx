@@ -50,8 +50,10 @@ const parseLighthouseReportForScores = (lighthouseReport: any) => {
     seo: 0,
   };
   for (const [key, value] of Object.entries(
+    //@ts-ignore
     JSON.parse(Object.values(lighthouseReport.files)[0].content).categories
   )) {
+    //@ts-ignore
     scores[key] = value.score * 100;
   }
   return scores;
