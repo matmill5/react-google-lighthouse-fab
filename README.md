@@ -14,7 +14,7 @@ It's intended for developers that want to highlight their web applications' perf
 
 ## Demo
 
-You can demo component via [storybook](https://storybook.lighthousefab.com/).
+You can demo component via [storybook](https://competent-goldberg-06ad3c.netlify.app/).
 
 ## Get Started
 
