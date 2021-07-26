@@ -45,7 +45,7 @@ Once imported, pass the component a gistId (where your lighthouse report is host
 
 ## Documentation
 
-[Docs](https://docs.lighthousefab.com/)
+[Docs]()
 
 ## Contribution
 
