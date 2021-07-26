@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
-        "declarationDir": "build",
+        "declarationDir": "",
         "module": "esnext",
         "target": "es5",
         "lib": [
@@ -17,7 +17,7 @@
         "esModuleInterop": true
     },
     "include": [
-        "lib/components/**/*", "lib/custom.d.ts"
+        "lib/**/**/*", "lib/custom.d.ts"
     ],
     "exclude": [
         "node_modules",

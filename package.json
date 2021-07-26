@@ -1,9 +1,10 @@
 {
-  "name": "react-google-lighthouse-report-fab",
-  "version": "1.0.1",
+  "name": "react-google-lighthouse-fab",
+  "version": "1.0.0",
   "description": "React Floating Access Button (FAB) for Google Lighthouse Reports",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "types": "build/index.d.ts",
   "files": [
     "/build"
   ],
@@ -16,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matmill5/react-google-lighthouse-report-fab.git"
+    "url": "git+https://github.com/matmill5/react-google-lighthouse-fab.git"
   },
   "keywords": [
     "google",
@@ -35,9 +36,9 @@
   "author": "Matthew E. Miller",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/matmill5/react-google-lighthouse-report-fab/issues"
+    "url": "https://github.com/matmill5/react-google-lighthouse-fab/issues"
   },
-  "homepage": "https://github.com/matmill5/react-google-lighthouse-report-fab#readme",
+  "homepage": "https://github.com/matmill5/react-google-lighthouse-fab#readme",
   "dependencies": {
   },
   "peerDependencies": {
