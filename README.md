@@ -41,7 +41,7 @@ Once imported, pass the component a gistId (where your lighthouse report is host
 
 ## Storybook
 
-[Storybook](https://storybook.lighthousefab.com/)
+[Storybook](https://competent-goldberg-06ad3c.netlify.app/)
 
 ## Documentation
 
