@@ -1,31 +1,58 @@
-# React Google Lighthouse FAB
+<h1 style="text-align:center"><b>Google Lighthouse FAB</b></h1>
 
-This is a Floating Access Button component for Google Lighthouse Reports. It's intended for developers that want to highlight their web applications (or websites') performance scores.
+<div style="margin:20px">
+    <img src="./lib/assets/png/lighthouse-fab-screengrab.png" style="display: block;margin-left: auto;margin-right: auto; height:100px;width:100px;" />
+</div>
 
-![Lighthouse FAB](lib/assets/png/lighthouse-fab-screengrab.png)
+<p style="text-align:center;"><b>Showcase your app's performance with Google Lighthouse FAB.</b></p>
 
-# Get Started
+<p style="text-align:center;">A simple, easy-to-use react component.</p>
 
+This is a Floating Access Button component for Google Lighthouse Reports.
+
+It's intended for developers that want to highlight their web applications' performance scores.
+
+## Demo
+
+You can demo component via [storybook](https://storybook.lighthousefab.com/).
+
+## Get Started
+
+Begin by installing the component via npm:
+```
 npm install react-google-lighthouse-fab
-
+```
+Once installed, import the component into your project:
+```
 import { LighthouseFab } from 'react-google-lighthouse-fab';
+```
+Once imported, pass the component a gistId (where your lighthouse report is hosted):
+```
+<LighthouseFab gistId={your_reports_gistId}/>
+```
 
-<LighthouseFab />
+## Google Lighthouse Report
 
-# Storybook
+[Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-https://storybook.lighthousefab.com/
+## Google Lighthouse Viewer
 
-# Documentation
+[Google Lighthouse Viewer](https://googlechrome.github.io/lighthouse/viewer/)
 
-https://docs.lighthousefab.com/
+## Storybook
 
-# Contribution
+[Storybook](https://storybook.lighthousefab.com/)
 
-Do whatever you want with it. Submit a PR if you want to improve it.
+## Documentation
 
-# Authors
+[Docs](https://docs.lighthousefab.com/)
 
-Matthew E. Miller
+## Contribution
 
-JAMM Software Systems
+If you'd like to expand upon the component, please submit a PR (I'll almost certainly approve it).
+
+## Authors
+
+[Matthew E. Miller](https://www.matthewearlmiller.com) 
+
+[JAMM Software Systems](https://www.jammsoftwaresystems.com)

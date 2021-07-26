@@ -2,11 +2,15 @@
   "name": "react-google-lighthouse-report-fab",
   "version": "1.0.0",
   "description": "React Floating Access Button (FAB) for Google Lighthouse Reports",
-  "main": "index.js",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "files": ["build"],
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -39,12 +43,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.3",
     "@storybook/addon-actions": "^6.3.5",
     "@storybook/addon-essentials": "^6.3.5",
     "@storybook/addon-links": "^6.3.5",
     "@storybook/react": "^6.3.5",
     "@types/react": "^17.0.14",
     "@types/styled-components": "^5.1.11",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "rollup": "^2.54.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^4.3.5"
   }
 }

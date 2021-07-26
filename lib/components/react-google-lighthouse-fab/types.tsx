@@ -22,3 +22,11 @@ export interface LighthouseFabProps extends LighthouseFabContainerProps {
   gistId: string; // gist id
   showScoreTokens?: boolean;
 }
+
+export interface LighthouseScoresType {
+  performance: number;
+  accessibility: number;
+  "best-practices": number;
+  seo: number;
+  pwa: number;
+}
