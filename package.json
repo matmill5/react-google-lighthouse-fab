@@ -1,6 +1,6 @@
 {
   "name": "react-google-lighthouse-fab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Floating Access Button (FAB) for Google Lighthouse Reports",
   "main": "build/index.js",
   "module": "build/index.es.js",
